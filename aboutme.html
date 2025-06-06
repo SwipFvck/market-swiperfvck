@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    .container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 500px;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img.profile {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+      margin-bottom: 15px;
+    }
+
+    .card h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 1em;
+      line-height: 1.6;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 10px;
+      text-align: center;
+      width: 100%;
+      color: #ccc;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 20px;
+      }
+      .card h1 {
+        font-size: 1.5em;
+      }
+    }
+    
+.back-button {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  background: rgba(0, 188, 212, 0.8);
+  padding: 5px 5px;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 10;
+  transition: background 0.2s;
+}
+
+.back-button:hover {
+  background: rgba(0, 151, 167, 0.9);
+}
+  </style>
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video class="video-background" autoplay muted loop>
+    <source src="https://files.catbox.moe/gd5ajx.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <div class="overlay"></div>
+
+ <a href="index.html" class="back-button">Kembali ke Menu</a>
+
+  <!-- Main Container -->
+  <div class="container">
+    <div class="card">
+      <!-- Profile Photo -->
+      <img src="https://files.catbox.moe/dj5zee.jpg" alt="Profile Photo" class="profile">
+      
+      <h1>Hi, I'm Swiper</h1>
+      <p>I am a front-end developer passionate about building beautiful and user-friendly websites. I enjoy working with modern tools like Html and TypeScript. Outside of coding, I love automotive and gaming.</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      &copy; Swiper Fvck 2025.
+    </div>
+  </div>
+
+  <script>
+    console.log("About Me page loaded.");
+  </script>
+
+</body>
+</html>

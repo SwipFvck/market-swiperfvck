@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Halaman Pembayaran</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      font-family: sans-serif;
+      color: white;
+      height: 100%;
+      width: 100%;
+    }
+
+    /* Background Video */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: -1;
+    }
+
+    .container {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .payment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .payment-item {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .payment-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .payment-item p {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .payment-item img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .payment-item button {
+      background: #00bcd4;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+
+    .payment-item button:hover {
+      background: #0097a7;
+    }
+    
+    .back-button {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  background: rgba(0, 188, 212, 0.8);
+  padding: 5px 5px;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 10;
+  transition: background 0.2s;
+}
+
+.back-button:hover {
+  background: rgba(0, 151, 167, 0.9);
+}
+  </style>
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="https://files.catbox.moe/bffaqy.mp4" type="video/mp4" />
+    Browser Anda tidak mendukung video.
+  </video>
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
+   
+<a href="index.html" class="back-button">Kembali ke Menu</a>
+
+  <!-- Konten -->
+  <div class="container">
+    <h1>Pilih Metode Pembayaran</h1>
+    <div class="payment-grid">
+      
+      <!-- DANA -->
+      <div class="payment-item">
+        <p>DANA</p>
+        <img src="https://files.catbox.moe/ywg4hq.jpg" alt="DANA">
+        <button onclick="salin('083895883216')">Salin Dana</button>
+      </div>
+      
+      <!-- OVO -->
+      <div class="payment-item">
+        <p>OVO</p>
+        <img src="https://files.catbox.moe/3sgf4s.jpg" alt="DANA">
+        <button onclick="salin('083895883216')">Salin No Ovo</button>
+      </div>
+
+      <!-- GoPay -->
+      <div class="payment-item">
+        <p>GOPAY</p>
+        <img src="https://files.catbox.moe/s4rd2a.jpg" alt="GoPay">
+        <button onclick="salin('082115117899')">Salin Gopay</button>
+      </div>
+
+      <!-- QRIS -->
+      <div class="payment-item">
+        <p>QRIS</p>
+        <img src="https://files.catbox.moe/hvy8on.jpg" alt="QRIS">
+        <button><a href="https://files.catbox.moe/bwwtl5.jpg" target="_blank">Lihat QRIS</a></button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function salin(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Berhasil disalin: " + text);
+      }).catch(() => {
+        alert("Gagal menyalin teks.");
+      });
+    }
+  </script>
+</body>
+</html>
